@@ -48,11 +48,17 @@ st.markdown("""
 
     }
 
-    span{
-            font-family: var(--main-font) !important;
-            font-weight: 600 !important;
-            color: white !important;
-    }
+    /* Apply only to normal text spans, not icons */
+.stMarkdown span, 
+section[data-testid="stSidebar"] span, 
+label span, 
+p span, 
+div span {
+    font-family: var(--main-font) !important;
+    font-weight: 600 !important;
+    color: white !important;
+}
+
     label,p,div{
         font-family: var(--main-font) !important;
 
