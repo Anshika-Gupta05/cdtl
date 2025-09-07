@@ -33,43 +33,60 @@ st.markdown("""
         --main-font: 'EB Garamond', serif;
     }
     
-     [data-testid="stIconMaterial"] > span,
-    [data-testid="stSidebarCollapseButton"] svg {
+        /* Hide all original keyboard_double_arrow_right elements */
+    [data-testid="stIconMaterial"] > span,
+    [data-testid="stSidebarCollapseButton"] svg,
+    .st-emotion-cache-ujm5ma > span {
         display: none !important;
+        visibility: hidden !important;
+        font-size: 0 !important;
     }
 
-    /* Show hamburger icon when sidebar is open */
-    [data-testid="stSidebar"][aria-expanded="true"] [data-testid="stSidebarCollapseButton"]:after {
+    /* Add hamburger icon to the collapse button */
+    [data-testid="stSidebarCollapseButton"]:after {
         content: "☰" !important;
-        font-size: 20px !important;
-        color: white !important;
+        font-size: 24px !important;
+        font-weight: bold !important;
+        display: block !important;
         position: absolute !important;
+    }
+
+    /* Hamburger icon when sidebar is OPEN (inside sidebar) */
+    [data-testid="stSidebar"][aria-expanded="true"] [data-testid="stSidebarCollapseButton"]:after {
+        color: white !important;
         right: 15px !important;
         top: 15px !important;
     }
 
-    /* Show hamburger icon when sidebar is closed (main area) */
+    /* Hamburger icon when sidebar is CLOSED (main page) */
     [data-testid="stSidebar"][aria-expanded="false"] ~ [data-testid="stAppViewContainer"] [data-testid="stSidebarCollapseButton"]:after {
-        content: "☰" !important;
-        font-size: 20px !important;
         color: var(--secondary-color) !important;
-        position: fixed !important;
         left: 15px !important;
         top: 15px !important;
-        z-index: 1000 !important;
     }
 
-    /* Ensure button remains clickable */
+    /* Style the button container */
     [data-testid="stSidebarCollapseButton"] {
         background: transparent !important;
         border: none !important;
         cursor: pointer !important;
-        width: 30px !important;
-        height: 30px !important;
+        width: 40px !important;
+        height: 40px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        position: relative !important;
+        z-index: 1000 !important;
     }
+
+    /* Remove any default button styles */
+    [data-testid="stSidebarCollapseButton"] button {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
     
     html, body, [class*="css"]  {
         font-family: var(--main-font) !important;
