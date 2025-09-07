@@ -33,27 +33,42 @@ st.markdown("""
         --main-font: 'EB Garamond', serif;
     }
     
-    [data-testid="stIconMaterial"] > span,
-    [data-testid="stSidebarCollapseButton"] svg,
-    [data-testid="stSidebarCollapseButton"] .st-emotion-cache-ujm5ma {
+     [data-testid="stIconMaterial"] > span,
+    [data-testid="stSidebarCollapseButton"] svg {
         display: none !important;
     }
 
-    /* Replace with custom icon or leave empty */
-    [data-testid="stSidebarCollapseButton"]:after {
+    /* Show hamburger icon when sidebar is open */
+    [data-testid="stSidebar"][aria-expanded="true"] [data-testid="stSidebarCollapseButton"]:after {
         content: "☰" !important;
         font-size: 20px !important;
         color: white !important;
-        margin-left: 10px !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 15px !important;
     }
 
-    /* Ensure the button remains clickable */
+    /* Show hamburger icon when sidebar is closed (main area) */
+    [data-testid="stSidebar"][aria-expanded="false"] ~ [data-testid="stAppViewContainer"] [data-testid="stSidebarCollapseButton"]:after {
+        content: "☰" !important;
+        font-size: 20px !important;
+        color: var(--secondary-color) !important;
+        position: fixed !important;
+        left: 15px !important;
+        top: 15px !important;
+        z-index: 1000 !important;
+    }
+
+    /* Ensure button remains clickable */
     [data-testid="stSidebarCollapseButton"] {
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        width: 30px !important;
+        height: 30px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        width: 30px !important;
-        height: 30px !important;
     }
     
     html, body, [class*="css"]  {
