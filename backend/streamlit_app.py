@@ -23,6 +23,7 @@ st.set_page_config(
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
 
     :root {
         --primary-color: #A8D6EB;
@@ -47,17 +48,22 @@ st.markdown("""
                     font-family: var(--main-font) !important;
 
     }
-
-    /* Apply only to normal text spans, not icons */
-.stMarkdown span, 
-section[data-testid="stSidebar"] span, 
-label span, 
-p span, 
-div span {
-    font-family: var(--main-font) !important;
-    font-weight: 600 !important;
-    color: white !important;
-}
+    .material-symbols-outlined,
+    .material-symbols-sharp,
+    .material-symbols-rounded {
+        font-family: 'Material Symbols Outlined' !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+        font-size: 24px !important;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+    }
 
     label,p,div{
         font-family: var(--main-font) !important;
