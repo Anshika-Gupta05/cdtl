@@ -33,17 +33,26 @@ st.markdown("""
         --main-font: 'EB Garamond', serif;
     }
     
-    [data-testid="stSidebarCollapseButton"] button svg,
-    span[data-testid="stIconMaterial"] > span {
+    [data-testid="stSidebarCollapseButton"] svg,
+    span[data-testid="stIconMaterial"],
+    .stSidebarCollapseButton svg,
+    .st-emotion-cache-ujm5ma,
+    .ejhh0er0,
+    [class*="keyboard_double_arrow_right"] {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
     }
-    
-    [data-testid="stSidebarCollapseButton"] button:before,
-    span[data-testid="stIconMaterial"]:before {
-        content: "☰" !important;
-        font-size: 20px !important;
-        color: white !important;
-        display: inline-block !important;
+
+    /* Remove any pseudo-elements that might contain the icon */
+    [data-testid="stSidebarCollapseButton"]:before,
+    [data-testid="stSidebarCollapseButton"]:after,
+    span[data-testid="stIconMaterial"]:before,
+    span[data-testid="stIconMaterial"]:after {
+        content: "" !important;
+        display: none !important;
     }
     
     html, body, [class*="css"]  {
