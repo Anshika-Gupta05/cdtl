@@ -33,12 +33,17 @@ st.markdown("""
         --main-font: 'EB Garamond', serif;
     }
     
-    span[data-testid="stIconMaterial"] > span { display: none !important; }
+    [data-testid="stSidebarCollapseButton"] button svg,
+    span[data-testid="stIconMaterial"] > span {
+        display: none !important;
+    }
     
+    [data-testid="stSidebarCollapseButton"] button:before,
     span[data-testid="stIconMaterial"]:before {
         content: "☰" !important;
         font-size: 20px !important;
         color: white !important;
+        display: inline-block !important;
     }
     
     html, body, [class*="css"]  {
