@@ -32,7 +32,15 @@ st.markdown("""
         --accent-color: #C9E1EC;
         --main-font: 'EB Garamond', serif;
     }
-
+    
+    span[data-testid="stIconMaterial"] > span { display: none !important; }
+    
+    span[data-testid="stIconMaterial"]:before {
+        content: "☰" !important;
+        font-size: 20px !important;
+        color: white !important;
+    }
+    
     html, body, [class*="css"]  {
         font-family: var(--main-font) !important;
     }
